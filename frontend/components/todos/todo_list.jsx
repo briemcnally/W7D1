@@ -1,8 +1,8 @@
 import React from 'react';
 import TodoListContainer from "./todo_list_container";
 import TodoListItem from "./todo_list_item";
-// import { receiveTodo, receiveTodos } from '../../actions/todo_actions';
 import {allTodos} from '../../reducers/selectors';
+import TodoForm from './todo_form';
 
 class TodoList extends React.Component {
   constructor(props){
@@ -16,12 +16,13 @@ class TodoList extends React.Component {
     ));
     return (
       <div className="list">
-        <h1 onClick={this.props.receiveTodo}>
-          Click to See To Dos
+        <h1>
+          All Todos
         </h1>
         <ul className='list-items'>
           {listItems}
         </ul>
+        <TodoForm receiveTodo={this.props.receiveTodo} />
       </div>
     );
   }
